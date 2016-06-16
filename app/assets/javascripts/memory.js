@@ -6,4 +6,5 @@ $(document).ready(function(){
 		else {
 			$(this).text('clicked').addClass('green-cell');
 		}
+	});
 });

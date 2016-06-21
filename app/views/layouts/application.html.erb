@@ -7,13 +7,13 @@
   <%= csrf_meta_tags %>
 
 <script>
-var memory_array = ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', 'F', 'F'];
-var memory_values = [];
-var memory_tile_ids = [];
-var tiles_flipped = 0
+const memory_array = ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', 'F', 'F'];
+const memory_values = [];
+const memory_tile_ids = [];
+const tiles_flipped = 0
 
 Array.prototype.memory_tile_shuffle = function(){
-	var i = this.length, j, temp;
+	let i = this.length, j, temp;
 	while(--i >0){
 		j = Math.floor(Math.random() * (i+1));
 		temp = this[j];
@@ -24,17 +24,14 @@ Array.prototype.memory_tile_shuffle = function(){
 
 function newBoard(){
 	tiles_flipped = 0
-	var output = '';
+	let output = '';
 	memory_array.memory_tile_shuffle();
-	for(var i = 0; i < memory_array.length, i++){
+	for(let i = 0; i < memory_array.length, i++){
 		output += '<div id='tile_'+i+'" onClick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';
 	}
 	document.getElementById('memory_board').innerHTML = output
 }
 
-function function_name(argument) {
-	// body...
-}
 </script>
 </head>
 <body>
